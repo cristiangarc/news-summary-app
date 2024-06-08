@@ -4,7 +4,13 @@ import { getNYTArticles } from "./components/fetch";
 
 
 function Homepage () {
-    getNYTArticles('Automobiles')
+    getNYTArticles('HomePage')
+
+    return (
+        <div>
+            
+        </div>
+    )
 }
 
 
