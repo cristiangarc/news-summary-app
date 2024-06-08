@@ -1,21 +1,18 @@
 import { useState, useEffect } from "react";
 import { getNYTArticles } from "./components/fetch";
-import { Link } from "react-router-dom";
 import Section from "./components/Section";
+import { Link } from "react-router-dom";
+
+const sections = require("./data/NYT-sections.json");
 
 function Homepage () {
-    const [articles, setArticles] = useState([]);
-
-    useEffect(() => {
-        getNYTArticles('HomePage').then((arts) => {
-            setArticles(arts);
-        }).catch((err) => console.error(err));
-    }, []);
-
     return (
         <div>
             <h1>HomePage</h1>
-            <Section articles={articles} />                
+            {sections.map((section) =>
+                <section key={section}>
+                    <Link to={`/sections/${sections.indexOf(section)}`} className="section-link">{section}</Link>
+                </section>)}
         </div>
     )
 }
