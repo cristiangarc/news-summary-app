@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getNYTArticles } from "./components/fetch";
 import { Link } from "react-router-dom";
+import Section from "./components/Section";
 
 function Homepage () {
     const [articles, setArticles] = useState([]);
@@ -16,8 +17,7 @@ function Homepage () {
             {console.log(articles)}
             <h1>HomePage</h1>
             {articles.length > 0 && articles.map(article => <li key={article.guid}>
-                <Link to={article.link} target="_blank">{article.title}</Link>
-                <p>{article.description}</p>
+                <Section article={article} />                
             </li>)}
         </div>
     )
