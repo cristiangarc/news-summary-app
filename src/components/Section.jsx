@@ -16,6 +16,8 @@ const Section = () => {
 
     return (
         <div>
+            <Link to='/'>Home</Link>
+            <h1>{sectionsArr[id]}</h1>
             {articles.length > 0 && articles.map(article =>
                 <li key={article.guid}>
                     <Link to={article.link} target="_blank">{article.title}</Link>
