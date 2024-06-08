@@ -14,11 +14,8 @@ function Homepage () {
 
     return (
         <div>
-            {console.log(articles)}
             <h1>HomePage</h1>
-            {articles.length > 0 && articles.map(article => <li key={article.guid}>
-                <Section article={article} />                
-            </li>)}
+            <Section articles={articles} />                
         </div>
     )
 }
